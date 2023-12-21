@@ -1,11 +1,11 @@
-import { MongoClient } from "mongodb";
-import Boom from "@hapi/boom";
-import generateFakeData from "./generateFakeData.js";
+import { MongoClient } from 'mongodb';
+import Boom from '@hapi/boom';
+import generateFakeData from './generateFakeData.js';
 
 let client;
 
 export async function initialize() {
-  client = new MongoClient(process.env.MONGO_URL, { authSource: 'admin', });
+  client = new MongoClient(process.env.MONGO_URL, { authSource: 'admin'});
   await client.connect();
 
   const animals = client.db().collection('animals');
@@ -37,6 +37,6 @@ export async function getAnimal(id) {
   }
   return {
     id: animal.id,
-    name: animal.name,
+    name: animal.name
   };
 }
