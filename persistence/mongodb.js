@@ -37,6 +37,6 @@ export async function getAnimal(id) {
   }
   return {
     id: animal.id,
-    name: animal.name
+    name: animal.name,
   };
 }
